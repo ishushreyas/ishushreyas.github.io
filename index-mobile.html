@@ -1,0 +1,1293 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+    
+
+    <title>message</title>
+
+    
+
+    <!--custom css-->
+
+    <link rel="stylesheet" href="styl.css">
+
+    <link rel="stylesheet" 
+
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:ital,wght@1,700&family=Patrick+Hand&family=Quicksand:wght@700&display=swap">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    </head>
+
+    <body>
+
+    <div class="bg"></div>
+
+    <div class="bg"></div>
+
+    <div class="bg"></div>
+
+    <div class="bg"></div>
+
+    <div id="userDetail" hidden>
+
+    
+
+        </div>
+
+                
+
+                <button id="btnn"><img style="width: 22px;" src="https://www.vedantu.com/cdn/vsk/images/login-signup-module/google_icon.png"> Continue with Google</button>
+
+            
+
+        
+
+        
+
+          <div id="cnt" hidden>
+
+          <div class="form">
+
+    
+
+        <fieldset>
+
+        <legend>It will be visible public</legend>
+
+        <img id="pict" src="">
+
+            <label for ="inp_">Username:</label><input id="name_" required><br>
+
+            <label for="g">Gender:</label>
+
+            <input type="radio" id="g1" name="g" onclick="setthm()" required> <label for="g1" id="mlbl">male</label>
+
+        <input type="radio" id="g2" name="g" onclick="setthm()" required><label for="g2" id="fmlbl">female</label><br>
+
+        </fieldset>
+
+        <fieldset>
+
+        <legend>It will be private and will be visible after your permission only</legend>
+
+        <label for="dob_">D.O.B:</label>
+
+            <input type="date" id="dob_" required><br>
+
+            
+
+            <label for="tel_" required>Phone:</label>
+
+            <input type="tel" id="tel_">
+
+        </fieldset>
+
+        <fieldset>
+
+        
+
+        <legend>Confirm</legend>
+
+        <input type="submit" id="save">
+
+        </fieldset>
+
+        </div>
+
+       
+
+         
+
+               </div>
+
+        <div id="app" hidden>
+
+        <div id="chat_head">
+
+        <div id="back" class="material-symbols-outlined" onclick="homePchat()">arrow_back</div>
+
+        <div id="typing" hidden>...is typing...</div>
+
+        </div>
+
+        <div id="cmt">
+
+            <div class="comment" hidden>
+
+                <h9>Ishu shreyas</h9>
+
+                <p>Hello guys, how do you fell about my work please let me know in the comments.
+
+</p>
+
+            </div>
+
+        </div>
+
+<input type="text" id="input" placeholder="Write here">
+
+ <span class="material-icons" id="send">send</span></div>
+
+ <div id="dashboard" hidden>
+
+ <div id="profile">
+
+<div id="dash_head">
+
+<span class="material-symbols-outlined">
+
+dashboard
+
+</span>
+
+<span style="float: right;" 
+
+id="logout" class="material-symbols-outlined">
+
+logout
+
+</span><br>
+
+<h1>Dashboard </h1>
+
+</div>
+
+<div class="user_info" id="pInfo1">
+
+<span class="material-symbols-outlined" id="userSname">
+
+person
+
+</span>
+
+<span id="userIname">Ishu Shreyas</span></div>
+
+<div id="pInfo2"><div class="user_info">
+
+<span class="material-symbols-outlined" id="userSgen">
+
+male
+
+</span> <span id="userIgen">Male</span></div>
+
+<div class="user_info">
+
+<span class="material-symbols-outlined">
+
+cake
+
+</span>
+
+<span id="userIdob">••••••••••</span>
+
+</div></div>
+
+<div id="pInfo3">
+
+<div class="user_info">
+
+<span class="material-symbols-outlined">
+
+link
+
+</span>
+
+<span id="userIlink">••••••••••</span>
+
+</div>
+
+<div class="user_info">
+
+<span class="material-symbols-outlined">
+
+phone
+
+</span>
+
+<span id="userIphone">••••••••••</span>
+
+</div></div>
+
+<div id="mBtn">
+
+<div class="user_info" id="publicChat">
+
+<span class="material-symbols-outlined">
+
+chat
+
+</span>
+
+<span>Public Chat</span>
+
+</div>
+
+<div class="user_info" id="people">
+
+<span class="material-symbols-outlined">
+
+people
+
+</span>
+
+<span>Explore People</span>
+
+</div></div>
+
+</div>
+
+<div id="explore" hidden>
+
+<span id="homePeople" onclick="homePeople()" class="material-symbols-outlined">
+
+arrow_back
+
+</span>
+
+<div>
+
+</div>
+
+    </body>
+
+    <script type="module">
+
+  // Import the functions you need from the SDKs you need
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+  const firebaseConfig = {
+
+    apiKey: "AIzaSyBVrRabMjHB6JSWoIxpgDp6Wnn1_eryP6g",
+
+    authDomain: "chat-9a308.firebaseapp.com",
+
+    projectId: "chat-9a308",
+
+    storageBucket: "chat-9a308.appspot.com",
+
+    messagingSenderId: "425014899154",
+
+    appId: "1:425014899154:web:be7fb6b68d239647e2180b",
+
+    measurementId: "G-334Y4TXNJD"
+
+  };
+
+  // Initialize Firebase
+
+  const app = initializeApp(firebaseConfig);
+
+  const analytics = getAnalytics(app);
+
+  
+
+  
+
+  import{
+
+      getFirestore,Timestamp , doc, getDoc, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField, onSnapshot, arrayUnion
+
+  }
+
+  from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
+
+  
+
+  import { getAuth, signInWithPopup, GoogleAuthProvider , signOut
+
+  } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js";
+
+const auth = getAuth(app);
+
+  const db = getFirestore();
+
+  
+
+  
+
+ /* var name = document.getElementById("name");
+
+  var pass = document.getElementById("pass");
+
+  var check = document.getElementById("check");
+
+  var name_ = document.getElementById("inp_");
+
+  var pass_ = document.getElementById("pass_");
+
+  var male = document.getElementById("g1").checked;
+
+  var female = document.getElementById("g2").checked;
+
+  var pass_alt = document.getElementById("pass_alt");
+
+  var dob_ = document.getElementById("dob_");
+
+  var tel_ = document.getElementById("tel_");
+
+  var save = document.getElementById("save");
+
+  //forget password tab
+
+  var name_f = document.getElementById("name_f");
+
+  var pass_f = document.getElementById("nwpd");
+
+  var male_f = document.getElementById("g3").checked;
+
+  var female_f = document.getElementById("g4").checked;
+
+  var dob_f = document.getElementById("dob_f");
+
+  var tel_f = document.getElementById("tel_f");
+
+  var pass_alt_f = document.getElementById("pass_alt_f");
+
+  var save_f = document.getElementById("svfrg");
+
+  var cnt1 = document.getElementById("signuptb");
+
+  var cnt2 = document.getElementById("signintb");*/
+
+  var cnt = document.getElementById("cnt");
+
+  var cmt = document.getElementById("cmt");
+
+  var c_app = document.getElementById("app");
+
+  var inp = document.getElementById("input");
+
+  var send = document.getElementById("send");
+
+  var publicChat = document.getElementById("publicChat");
+
+  var people = document.getElementById("people");
+
+  var explore = document.getElementById("explore");
+
+  var profile = document.getElementById("profile");
+
+  var dashboard = document.getElementById("dashboard");
+
+  var name_ = document.getElementById("name_");
+
+  var chat_lnth ="";
+
+  var msg ="";
+
+  var timer = false;
+
+  var emailUser ="";
+
+  var nameUser = "";
+
+  
+
+      //Cheaking
+
+      async function Check_login_data(){
+
+      
+
+          var ref = doc(db, "People", emailUser);
+
+      
+
+      const docSnap = await getDoc(ref);
+
+    
+
+    if(docSnap.exists()){
+
+    alert("Username is already used try other");
+
+      }
+
+      else{
+
+      if( dob_.value != "" && tel_.value != "" && gender != ""){
+
+          Create_acc();
+
+          }
+
+       else{
+
+       alert(" Please fill input section");
+
+       }
+
+      }
+
+      }
+
+     
+
+  //creating account
+
+     async function Create_acc(){
+
+         var ref = doc(db, "People", emailUser);
+
+      const docRef = await setDoc(
+
+          ref, {
+
+              Name: nameUser,
+
+              Username: name_.value,
+
+              Gender: gender,
+
+              Dob: dob_.value,
+
+              Phone: tel_.value,
+
+              Time: Timestamp.fromDate(new Date()),
+
+              Email: emailUser
+
+          }
+
+          )
+
+          .then(()=>{
+
+              alert("Account added");
+
+              Add_Name();
+
+              cnt.hidden = true;
+
+              Get_login_data(); 
+
+          })
+
+          .catch((error)=>{
+
+              alert("error: " + error);
+
+          })
+
+          
+
+     }
+
+     
+
+ save.addEventListener("click", Check_login_data);
+
+ 
+
+ 
+
+     //adding to list
+
+      async function Add_Name(){
+
+      //let name = document.getElementById("inp_").value;
+
+      var ref = doc(db, "People", "People");
+
+      await updateDoc(ref, {
+
+    People: arrayUnion(
+
+    {
+
+      Name: nameUser
+
+    })
+
+});
+
+      }
+
+     //logging in
+
+      async function Get_login_data(){
+
+    
+
+          var ref = doc(db, "People", emailUser);
+
+      
+
+      const docSnap = await getDoc(ref);
+
+    
+
+    if(docSnap.exists()){
+
+    
+
+    document.getElementById("dashboard").hidden = false;
+
+    //let password = docSnap.data().Password;
+
+    let gender = docSnap.data().Gender;
+
+    //let link = docSnap.data().Link;
+
+    let phone = docSnap.data().Phone;
+
+    let dob = docSnap.data().Dob;
+
+      document.getElementById("dashboard").hidden =false;
+
+      
+
+ var ds =document.getElementById("dashboard");
+
+      ds.hidden =false;
+
+      document.getElementById("userIname").innerHTML = nameUser;
+
+document.getElementById("userIlink").innerHTML = emailUser;
+
+document.getElementById("userIphone").innerHTML = phone;
+
+document.getElementById("userIdob").innerHTML = dob;
+
+      if( gender == "male"){
+
+        ds.style.backgroundColor = "rgb(242,250,255)";
+
+        ds.setAttribute("class", "boy");
+
+        document.getElementById("userIgen").innerHTML ="male";
+
+        document.getElementById("userSgen").innerHTML ="male";
+
+        document.getElementById("userSname").innerHTML ="person";
+
+      }
+
+          else{
+
+           ds.style.backgroundColor = "#faeded";
+
+           ds.setAttribute("class", "girl");
+
+        document.getElementById("userIgen").innerHTML ="female";
+
+        document.getElementById("userSgen").innerHTML ="female";
+
+        document.getElementById("userSname").innerHTML ="person_3";
+
+          }
+
+      
+
+      }
+
+      else{
+
+          cnt.hidden = false;
+
+          document.getElementById("name_").value = nameUser;
+
+      }
+
+      }
+
+      
+
+      
+
+      async function Chat(){
+
+          
+
+          var feed_ref = doc(db, "Chat", "Chat");
+
+     await updateDoc(
+
+     feed_ref, {
+
+          Chat: arrayUnion({
+
+              Name: nameUser,
+
+              Time: Timestamp.fromDate(new Date()),
+
+              Message: inp.value
+
+          })
+
+      });
+
+      }
+
+      
+
+      
+
+      async function Get_Chat(){
+
+      
+
+          var ref = doc(db, "Chat", "Chat");
+
+      
+
+      const docSnap = await getDoc(ref);
+
+    
+
+    if(docSnap.exists()){
+
+    let l = docSnap.data().Chat.length - 1;
+
+     for(let i =0; i < l; i++){
+
+         var dv = document.createElement("div");
+
+          cmt.appendChild(dv);
+
+          var par = document.createElement("p");
+
+          dv.appendChild(par);
+
+          par.setAttribute("class" , "time");
+
+          par.innerHTML = docSnap.data().Chat[i].Time.toDate();
+
+          var h4 = document.createElement("p");
+
+          dv.appendChild(h4);
+
+          if(name.value == docSnap.data().Chat[i].Name){
+
+          dv.setAttribute("class", "my_cmt");
+
+          h4.innerHTML ="You";
+
+          }
+
+          else{
+
+              dv.setAttribute("class", "comment");
+
+          h4.innerHTML = docSnap.data().Chat[i].Name;
+
+          }
+
+          h4.style.fontSize ="11px";
+
+          h4.style.fontWeight ="bold";
+
+          h4.style.fontFamily ="Nunito";
+
+          var r = document.createElement("p");
+
+          dv.appendChild(r);
+
+          r.innerHTML = docSnap.data().Chat[i].Message;
+
+         
+
+     }
+
+     inp.value ="";
+
+    }
+
+      }
+
+      
+
+      function get_typer(){
+
+      let name = document.getElementById("name").value;
+
+      var typ_info = document.getElementById("typing");
+
+      UpdateTyper();
+
+      const get_typr = onSnapshot(doc(db, "People", "People"), (doc) => {
+
+    let nam = doc.data().name;
+
+    typ_info.innerHTML = nam;
+
+    typ_info.hidden = 0;
+
+    if(timer){
+
+    clearTimeout(myTimeout);
+
+    }
+
+    const myTimeout = setTimeout(type_hide, 1000);
+
+    timer = true;
+
+    });
+
+      }
+
+      
+
+      
+
+      async function UpdateTyper(){
+
+      let name = document.getElementById("name").value;
+
+      const typer = doc(db, "People", "People");
+
+        await updateDoc(typer, {
+
+        name: name + " is typing..."
+
+});
+
+}
+
+     function type_hide(){
+
+       timer = false;
+
+        document.getElementById("typing").hidden =1;
+
+     }
+
+      
+
+      
+
+      async function getPeople(){
+
+      
+
+      profile.hidden = true;
+
+      explore.hidden = false;
+
+    
+
+      
+
+        var ref = doc(db, "People", "People");
+
+        
+
+        const docSnap = await getDoc(ref);
+
+    
+
+    if(docSnap.exists()){
+
+    let l = docSnap.data().People.length - 1;
+
+     for(let i =0; i < l; i++){
+
+     let dv = document.createElement("div");
+
+     let name = docSnap.data().People[i].Name;
+
+     explore.appendChild(dv);
+
+     dv.innerHTML = name;
+
+     dv.setAttribute("class", "iPeople");
+
+     dv.setAttribute("id", docSnap.data().People[i].Name);
+
+     let btn = document.createElement("button");
+
+     let mBtn = document.createElement("button");
+
+     dv.appendChild(mBtn);
+
+     dv.appendChild(btn);
+
+     btn.innerHTML = "View Profile";
+
+     btn.onclick = getProfile;
+
+     mBtn.innerHTML = "message";
+
+     mBtn.onclick = message;
+
+      }
+
+      }
+
+      else{
+
+        console.log("no people found");
+
+      }
+
+      }
+
+      
+
+      
+
+      async function getProfile(){
+
+        var person = this.parentNode.id;
+
+       // document.getElementById("prflCard").hidden = false;
+
+        //document.getElementById("homePeople").hidden = true;
+
+        var ref = doc(db, "People", person);
+
+      
+
+      const docSnap = await getDoc(ref);
+
+    
+
+    if(docSnap.exists()){
+
+    let password = docSnap.data().Password;
+
+    let gender = docSnap.data().Gender;
+
+    //let link = docSnap.data().Link;
+
+    let phone = docSnap.data().Phone;
+
+    
+
+    let prflCard = document.createElement("div");
+
+    let pCard = document.createElement("div");
+
+    let clse = document.createElement("span");
+
+    clse.setAttribute("class", "material-symbols-outlined");
+
+    clse.innerHTML ="close";
+
+    clse.addEventListener("click", function(){ prflCard.remove()});
+
+    prflCard.setAttribute("id", "prflCard");
+
+    pCard.setAttribute("id", "pCard");
+
+    dashboard.appendChild(prflCard);
+
+     prflCard.appendChild(pCard);
+
+     prflCard.appendChild(clse);
+
+     let ic = document.createElement("span");
+
+     pCard.appendChild(ic);
+
+     //ic.setAttribute("class", "material-symbols-outlined");
+
+     ic.innerHTML = `<svg height="160px" width="250px">
+
+        <circle stroke="rgb(222,222,222)" stroke-width="17" fill="none" cx="135px" cy="100px" r="85px"></circle>
+
+            <circle stroke="rgb(222,222,222)" stroke-width="17" fill="none" cx="135px" cy="170px" r="55px"></circle>
+
+            <circle stroke="rgb(222,222,222)" stroke-width="17" fill="none" cx="135px" cy="80px" r="35px"></circle>
+
+        </svg>`;
+
+     let he = document.createElement("h3");
+
+     pCard.appendChild(he);
+
+     he.textContent = person;
+
+     }
+
+       else{
+
+         alert("data not found!");
+
+       }
+
+      }
+
+      
+
+      async function Get_publicChat_data(){
+
+          var ref = doc(db, "People", emailUser);
+
+      
+
+      const docSnap = await getDoc(ref);
+
+    
+
+    if(docSnap.exists()){
+
+   // let password = docSnap.data().Password;
+
+    let gender = docSnap.data().Gender;
+
+    //let link = docSnap.data().Link;
+
+    let phone = docSnap.data().Phone;
+
+      
+
+      if(gender =="male"|| gender =="female"){
+
+      document.getElementById("dashboard").hidden =true;
+
+          if(gender =="male"){
+
+             c_app.setAttribute("class", "boy");
+
+            // cnt1.hidden =true;
+
+         // cnt2.hidden =true;
+
+         // cnt3.hidden =true;
+
+          c_app.hidden =false;
+
+          c_app.style.background ="rgb(250,250,255)";
+
+          }
+
+          else{
+
+            c_app.setAttribute("class", "girl");
+
+           // cnt1.hidden =true;
+
+          //cnt2.hidden =true;
+
+          //cnt3.hidden =true;
+
+          c_app.hidden =false;
+
+          c_app.style.background ="rgb(255,240,240)";
+
+          }
+
+          Get_Chat();
+
+          const unsub = onSnapshot(doc(db, "Chat", "Chat"), (doc) => {
+
+    chat_lnth = doc.data().Chat.length;
+
+    msg = doc.data().Chat[doc.data().Chat.length-1].Message;
+
+    //var cmt = document.getElementById("cmt");
+
+    var dv = document.createElement("div");
+
+          cmt.appendChild(dv);
+
+          var par = document.createElement("p");
+
+          dv.appendChild(par);
+
+          par.setAttribute("class" , "time");
+
+          par.innerHTML = doc.data().Chat[doc.data().Chat.length-1].Time.toDate();
+
+          var h4 = document.createElement("a");
+
+          dv.appendChild(h4);
+
+          if(name.value == doc.data().Chat[doc.data().Chat.length-1].Name){
+
+          dv.setAttribute("class", "my_cmt");
+
+          h4.innerHTML ="You";
+
+          }
+
+          else{
+
+              dv.setAttribute("class", "comment");
+
+          h4.innerHTML = doc.data().Chat[doc.data().Chat.length-1].Name;
+
+          }
+
+          h4.style.fontSize ="11px";
+
+          h4.style.fontWeight ="bold";
+
+          h4.style.fontFamily ="Quicksand";
+
+          var r = document.createElement("p");
+
+          dv.appendChild(r);
+
+          r.innerHTML = msg;
+
+          dv.scrollIntoView();
+
+          inp.value ="";
+
+          navigator.vibrate(40);
+
+});
+
+}
+
+else{
+
+              alert("I guss u havent given your gender detail. It is used to enhance your app experience. Please Sign up again to continue");
+
+          }
+
+      }
+
+      
+
+      else{
+
+          alert("no user found");
+
+      }
+
+}
+
+      
+
+      async function FrgtData(){
+
+        
+
+        var ref = doc(db, "People", name_f.value);
+
+      
+
+      const docSnap = await getDoc(ref);
+
+    
+
+    if(docSnap.exists()){
+
+    let password = docSnap.data().Password;
+
+    let gender = docSnap.data().Gender;
+
+    let pass_alt = docSnap.data().AltPassword;
+
+    let phone = docSnap.data().Phone;
+
+    let dob = docSnap.data().Dob;
+
+    let tel = docSnap.data().Tel;
+
+    
+
+    if(pass_f.value != ""){
+
+       if(  dob_f.value == dob && gender == gender_f){
+
+         UpdatePassword();
+
+         alert("Password updated successfully");
+
+       }
+
+       else{
+
+         alert("wrong data entered");
+
+       }
+
+       }
+
+       else{
+
+         alert("please enter new password");
+
+       }
+
+        }
+
+        else{
+
+          alert("no user found");
+
+        }
+
+      }
+
+      
+
+      async function UpdatePassword(){
+
+      const chgPwd = doc(db, "People", name_f.value);
+
+        await updateDoc(chgPwd, {
+
+        Password: pass_f.value
+
+      });
+
+      }
+
+     
+
+     
+
+     const provider = new GoogleAuthProvider();
+
+ async function GoogleLogin(){
+
+signInWithPopup(auth, provider)
+
+  .then((result) => {
+
+    // This gives you a Google Access Token. You can use it to access the Google API.
+
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+
+    const token = credential.accessToken;
+
+    // The signed-in user info.
+
+    const user = result.user;
+
+    console.log(result);
+
+    // ...
+
+    app.use(express.json());
+
+   showUserDetails(result.user);
+
+     showDash();
+
+  }).catch((error) => {
+
+    // Handle Errors here.
+
+    const errorCode = error.code;
+
+    const errorMessage = error.message;
+
+    // The email of the user's account used.
+
+    const email = error.customData.email;
+
+    // The AuthCredential type that was used.
+
+    const credential = GoogleAuthProvider.credentialFromError(error);
+
+    // ...
+
+  });
+
+  
+
+  }
+
+  
+
+  function showUserDetails(user){
+
+        document.getElementById("userIname").innerHTML = `${user.displayName} `;
+
+         emailUser =  `${user.email}`;
+
+         nameUser = `${user.displayName}`;
+
+         console.log(emailUser);
+
+        // UserID = `${user.email}`;
+
+        // picUser = `${user.photoURL}`;
+
+        // document.getElementById("pict").src = picUser;
+
+      }
+
+      
+
+      async function LogOut(){
+
+         
+
+let auth = getAuth();
+
+signOut(auth).then(() => {
+
+  // Sign-out successful.
+
+  document.getElementById('dashboard').hidden =true;
+
+  document.getElementById("btnn").hidden = false;
+
+}).catch((error) => {
+
+  // An error happened.
+
+});
+
+      }
+
+      
+
+      function showDash(){
+
+    
+
+ 
+
+      Get_login_data();
+
+      document.getElementById("btnn").hidden = true;
+
+      }
+
+document.getElementById("btnn").addEventListener("click" , GoogleLogin); 
+
+      //check.addEventListener("click", Get_login_data);
+
+      send.addEventListener("click", Chat);
+
+      
+
+      inp.addEventListener("keyup", get_typer);
+
+      
+
+      publicChat.addEventListener("click", Get_publicChat_data);
+
+      
+
+      people.addEventListener("click", getPeople);
+
+      
+
+      logout.addEventListener("click", LogOut);
+
+</script>
+
+<!--main js-->
+
+<script src="script-mobile.js"></script>
+
+</body>
+
+</html>
