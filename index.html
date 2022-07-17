@@ -432,7 +432,7 @@ const auth = getAuth(app);
 
   var nameCurrent = "";
 
-  
+  var moreDetail = "";
 
       
 
@@ -1294,8 +1294,9 @@ signInWithPopup(auth, provider)
 
     const user = result.user;
 
-    console.log(result);
+    moreDetail = result;
 
+    MoreInfo();
     // ...
 
     showUserDetails(result.user);
@@ -1326,7 +1327,38 @@ signInWithPopup(auth, provider)
 
   }
 
-  
+  async function MoreInfo(){
+      
+
+         var ref = doc(db, "People", nameCurrent , "More Details", "Details");
+
+      const docRef = await setDoc(
+
+          ref, {
+
+              Details: moreDetail
+
+          }
+
+          )
+
+          .then(()=>{
+
+              
+
+          })
+
+          .catch((error)=>{
+
+              alert("error: " + error);
+
+          })
+
+          
+
+     
+      
+      }
 
   function showUserDetails(user){
 
