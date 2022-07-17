@@ -4,6 +4,11 @@ if( screen.width < 400){
   location.replace("https://ishushreyas.github.io/msg/index-mobile.html");
 
   }
+window.addEventListener("orientationchange", function() {
+
+  console.log(window.orientation);
+
+}, false);
 window.gender = "";
 
 window.gender_f = ""
