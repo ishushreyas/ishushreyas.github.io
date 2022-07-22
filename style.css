@@ -505,6 +505,11 @@ bottom: 9vh;
 #feedapp{
 
   overflow-y: scroll;
+    height: 100vh;
+    position: fixed;
+    right: 20vw;
+    top:0;
+    width: 60vw;
 
 }
 
@@ -550,7 +555,7 @@ bottom: 9vh;
 
 }
 
-.girl .my_cmt{
+.girl .my_cmt , .girl .my_feed{
 
     border: none;
 
@@ -560,7 +565,7 @@ bottom: 9vh;
 
 }
 
-.girl .comment{
+.girl .comment, .girl .feed{
 
     border: none;
 
