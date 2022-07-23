@@ -893,7 +893,13 @@ span:active {
 
 }
 
-.iPeop
+.iPeople button{
+border: none;
+background: transparent;
+}
+.iPeople button:active {
+ background-color: rgb(0,0,0,0.2);
+}
 
 @media only screen and (max-width: 500px){
 
