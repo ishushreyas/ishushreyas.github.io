@@ -72,7 +72,7 @@ input{
 
 }
 
-[type ='submit'], #btnn{
+[type ='submit'], #btnn,#pPolcy{
 
     width: 268px;
 
@@ -144,7 +144,7 @@ input{
 
     padding: 18px;
 
-    height: 700px;
+    height: 500px;
 
     width: 310px;
 
