@@ -502,7 +502,8 @@ const auth = getAuth(app);
 
               Time: Timestamp.fromDate(new Date()),
 
-              Email: emailUser
+              Email: emailUser,
+              Uid: uid
 
           }
 
@@ -1553,6 +1554,25 @@ signInWithPopup(auth, provider)
         // UserID = `${user.email}`;
 
         // picUser = `${user.photoURL}`;
+                                           if (user) {
+
+    // User is signed in, see docs for a list of available properties
+
+    // https://firebase.google.com/docs/reference/js/firebase.User
+
+    const uid = user.uid;
+
+    const pPic = user.photuURL;
+
+    // ...
+
+  } else {
+
+    alert(' User is signed out');
+
+    // ...
+
+  }
 
         // document.getElementById("pict").src = picUser;
 
