@@ -399,9 +399,10 @@ input{
 #imge{
     position: absolute;
     right: 23px;
-    bottom: 23px;
+    bottom: 73px;
     border-radius: 100%;
     border:solid;
+    padding: 7px;
     }
 
 #chat_head{
