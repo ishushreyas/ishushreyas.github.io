@@ -395,13 +395,15 @@ input{
     outline: none;
 
 }
+
 #imge{
     position: absolute;
-    right:0;
+    right: 23px;
     bottom: 23px;
     border-radius: 100%;
     border:solid;
     }
+
 #chat_head{
 
  position: fixed;
