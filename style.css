@@ -395,7 +395,13 @@ input{
     outline: none;
 
 }
-
+#imge{
+    position: absolute;
+    right:0;
+    bottom: 23px;
+    border-radius: 100%;
+    border:solid;
+    ;s
 #chat_head{
 
  position: fixed;
