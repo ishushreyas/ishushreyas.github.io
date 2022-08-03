@@ -1247,9 +1247,13 @@ else{
 
       
 
-     function GetPfeed(){
+     
 
-        Get_Feed();
+         
+
+    async function Get_Feed(){
+
+        
 
           capp.hidden = false;
 
@@ -1257,11 +1261,17 @@ else{
 
           c_app.hidden = true;
 
-              const feeddata = onSnapshot(doc(db, "Feed", "feed"), (doc) => {
+              const querySnapshot = await getDocs(collection(db, "Feed"));
 
-             var chatLnth = doc.data().Chat.length;
+querySnapshot.forEach((doc) => {
 
-    var caption = doc.data().Chat[doc.data().Chat.length-1].Message;
+  // doc.data() is never undefined for query doc snapshots
+
+  console.log(doc.id, " => ", doc.data());
+
+             
+
+    var caption = doc.data().Message;
 
      
 
@@ -1275,13 +1285,13 @@ else{
 
           par.setAttribute("class" , "time");
 
-          par.innerHTML = doc.data().Chat[doc.data().Chat.length-1].Time.toDate();
+          par.innerHTML = doc.data().Time.toDate();
 
           var h4 = document.createElement("a");
 
           dv.appendChild(h4);
 
-          if(nameCurrent == doc.data().Chat[doc.data().Chat.length-1].Name){
+          if(nameCurrent == doc.data().Name){
 
           dv.setAttribute("class", "my_feed");
 
@@ -1293,7 +1303,7 @@ else{
 
               dv.setAttribute("class", "feed");
 
-          h4.innerHTML = doc.data().Chat[doc.data().Chat.length-1].Name;
+          h4.innerHTML = doc.data().Name;
 
           }
 
@@ -1303,7 +1313,7 @@ else{
 
           h4.style.fontFamily ="Quicksand";
 
-          var ffl = doc.data().Chat[doc.data().Chat.length-1].FileTyp;
+          var ffl = doc.data().FileTyp;
 
           if( ffl == "none"){
 
@@ -1313,7 +1323,7 @@ else{
 
              let ifrm = document.createElement(ffl);
 
-             ifrm.setAttribute("src", doc.data().Chat[doc.data().Chat.length-1].Url);
+             ifrm.setAttribute("src", doc.data().Url);
 
              if( ffl == "audio" || ffl == "video"){
 
@@ -1341,95 +1351,43 @@ else{
 
      }
 
-async function Get_Feed(){
+async function GetPfeed(){
 
       
 
-          var ref = doc(db, "Feed", "feed");
+          
 
-      
+    //  import { collection, query, where, onSnapshot } from "firebase/firestore";
 
-      const docSnap = await getDoc(ref);
+const q = query(collection(db, "Feed"), where("Name", "==", "Ishu"));
+
+const unsubscribe = onSnapshot(q, (querySnapshot) => {
+
+  const cities = [];
+
+  querySnapshot.forEach((doc) => {
+
+      cities.push(doc.data().Name);
+
+  });
+
+  fcmt.innerHTML = "";
+
+  console.log("Current cities in CA: ", cities.join(", "));
+
+  Get_Feed();
+
+          capp.hidden = false;
+
+          
+
+c_app.hidden = true;
+
+          document.getElementById("explore").hidden = true;
+
+});
 
     
-
-    if(docSnap.exists()){
-
-    document.getElementById("feedcmt").innerHTML = "";
-
-    let l = docSnap.data().Chat.length - 1;
-
-     for(let i =0; i < l; i++){
-
-         var dv = document.createElement("div");
-
-          fcmt.appendChild(dv);
-
-          var par = document.createElement("p");
-
-          dv.appendChild(par);
-
-          par.setAttribute("class" , "time");
-
-          par.innerHTML = docSnap.data().Chat[i].Time.toDate();
-
-          var h4 = document.createElement("p");
-
-          dv.appendChild(h4);
-
-          if(nameCurrent == docSnap.data().Chat[i].Name){
-
-          dv.setAttribute("class", "my_feed");
-
-          h4.innerHTML ="You";
-
-          }
-
-          else{
-
-              dv.setAttribute("class", "feed");
-
-          h4.innerHTML = docSnap.data().Chat[i].Name;
-
-          }
-
-          h4.style.fontSize ="11px";
-
-          h4.style.fontWeight ="bold";
-
-          h4.style.fontFamily ="Nunito";
-
-           var ffl = docSnap.data().Chat[i].FileTyp;
-
-          if( ffl == "none"){
-
-           }
-
-           else{
-
-             let ifrm = document.createElement(ffl);
-
-             ifrm.setAttribute("src", docSnap.data().Chat[i].Url);
-
-             ifrm.controls = true;
-
-             dv.appendChild(ifrm);
-
-           }
-
-          var r = document.createElement("p");
-
-          dv.appendChild(r);
-
-          r.innerHTML = docSnap.data().Chat[i].Message;
-
-         
-
-     }
-
-     finp.value ="";
-
-    }
 
       }
 
@@ -1443,13 +1401,13 @@ async function Get_Feed(){
 
           
 
-  var feed_ref = doc(db, "Feed", "feed");
+  var feed_ref = collection(db, "Feed");
 
-    await updateDoc(
+    await addDoc(
 
      feed_ref, {
 
-          Chat: arrayUnion({
+         
 
               Name: nameCurrent,
 
@@ -1463,11 +1421,20 @@ async function Get_Feed(){
 
               Message: finp.value,
 
-          })
+          
 
       })
 
       }
+
+      
+
+      
+      
+
+      
+
+      
 
       
 
@@ -1814,13 +1781,13 @@ async function SaveDownloadURL(url){
 
   
 
-  var feed_ref = doc(db, "Feed", "feed");
+  var feed_ref = doc(db, "Feed");
 
-     await updateDoc(
+     await adddoc(
 
      feed_ref, {
 
-          Chat: arrayUnion({
+          
 
               Name: nameCurrent,
 
@@ -1834,7 +1801,7 @@ async function SaveDownloadURL(url){
 
               Message: finp.value,
 
-          })
+          
 
       })
 
