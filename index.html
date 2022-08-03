@@ -380,7 +380,7 @@ phone
 
   import{
 
-      getFirestore,Timestamp , doc, getDoc, getDocs, query, where, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField, onSnapshot, arrayUnion
+      getFirestore,Timestamp , doc, getDoc, getDocs, limit, orderBy, query, where, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField, onSnapshot, arrayUnion
 
   }
 
@@ -1359,7 +1359,7 @@ async function GetPfeed(){
 
     //  import { collection, query, where, onSnapshot } from "firebase/firestore";
 
-const q = query(collection(db, "Feed"), where("Name", "==", "Ishu"));
+const q = query(collection(db, "Feed"), orderBy("Time"));
 
 const unsubscribe = onSnapshot(q, (querySnapshot) => {
 
