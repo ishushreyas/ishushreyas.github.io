@@ -514,11 +514,7 @@ bottom: 9vh;
 #feedapp{
 
   overflow-y: scroll;
-    height: 100vh;
-    position: fixed;
-    right: 20vw;
-    top:0;
-    width: 60vw;
+    
 
 }
 
