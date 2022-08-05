@@ -541,19 +541,18 @@ const auth = getAuth(app);
 
       //let name = document.getElementById("inp_").value;
 
-      var ref = doc(db, "People", "People");
+      var ref = doc(db, "Explore");
 
-      await updateDoc(ref, {
+      await addDoc(ref, {
 
-    People: arrayUnion(
-
-    {
+    
 
       Name: name_.value,
 
-      Email: emailUser
+      Email: emailUser,
+          Id: uid
 
-    })
+    
 
 });
 
