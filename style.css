@@ -930,7 +930,12 @@ background: transparent;
 
   }
 
-  #cmt, #input,#feedinput{
+  #cmt{
+      
+      width: 90vw;
+      
+    }
+   #input,#feedinput{
 
     width:70vw;
 
