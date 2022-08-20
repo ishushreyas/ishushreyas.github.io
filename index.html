@@ -495,7 +495,7 @@ const auth = getAuth(app);
   var nameUser = "";
 
   var nameCurrent = "";
-
+var uid = "";
       
 
      
@@ -1546,7 +1546,7 @@ signInWithPopup(auth, provider)
 
     // https://firebase.google.com/docs/reference/js/firebase.User
 
-    const uid = user.uid;
+     uid = user.uid;
 
     const pPic = user.photuURL;
 
