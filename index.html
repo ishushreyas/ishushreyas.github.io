@@ -565,9 +565,9 @@ var uid = "";
 
       //let name = document.getElementById("inp_").value;
 
-      var ref = doc(db, "Explore");
+      var ref = doc(db, "Explore", uid);
 
-      await addDoc(ref, {
+      await setDoc(ref, {
 
     
 
