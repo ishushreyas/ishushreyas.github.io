@@ -588,7 +588,7 @@ var uid = "";
 
     
 
-    var ref = doc(db, "People", "People");
+    var ref = doc(db, "Explore", uid);
 
       
 
@@ -598,18 +598,7 @@ var uid = "";
 
     if(docSnp.exists()){
 
-    let l = docSnp.data().People.length;
-
-     for(let i =0; i < l; i++){
-
-     let email = docSnp.data().People[i].Email;
-
-     let name = docSnp.data().People[i].Name;
-
-     if(email == emailUser ){
-
-     const emailCurrent  = emailUser;
-
+    
      nameCurrent = name;
 
      cnt.hidden = true;
