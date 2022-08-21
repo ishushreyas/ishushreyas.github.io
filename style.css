@@ -58,7 +58,7 @@ input{
 
     color: rgb(122,122,222);
 
-    background-color: rgb(245,250,255);
+    background-color: rgb(245,250,255,0.3);
 
 }
 
@@ -148,9 +148,9 @@ input{
 
     width: 310px;
 
-    background-color: rgb(230,230,250);
+    background-color: rgb(230,230,250,0.3);
 
-    //border-radius: 12px;
+    border-radius: 12px;
 
 }
 
