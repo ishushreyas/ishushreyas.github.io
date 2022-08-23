@@ -643,7 +643,7 @@ var uid = "";
 
     
 
-          var ref = doc(db, "People", name_.value);
+          var ref = query(collection(db, "Explore"), where("Email", "==", emailCurrent));
 
       
 
