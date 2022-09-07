@@ -1,5 +1,5 @@
-import { initializeApp } from 'firebase/app';
-import { getMessaging } from 'firebase/messaging/sw';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
+import { getMessaging } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-messaging-sw.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAN-X9u7n7QnM8RLrVV4YnXq2MmVz6WNfw",
