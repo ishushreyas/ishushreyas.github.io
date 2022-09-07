@@ -1,8 +1,8 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
 
-import { getMessaging, onBackgroundMessage } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-messaging-sw.js";
+import { getMessaging, onBackgroundMessage } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-messaging-sw.js";
 
-import { onMessage } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-messaging.js";
+import { onMessage } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-messaging.js";
 
 // Initialize the Firebase app in the service worker by passing in
 
