@@ -1,0 +1,23 @@
+<body>
+
+</body>
+<script>
+function requestPermission(){
+if(!('serviceWorker' in navigator)){
+  console.log('Service Worker not supported ');
+  
+  }
+navigator.serviceWorker.register('/service-worker.js')
+.then(function (registration) {
+  console.log('Resistered successfully. Scope is: ' , registration.acope);
+  });
+}
+Notification.requestPermission(status => {
+console.log('Notification permission: ' , status);
+});
+
+function displayNotification() {
+if(Notification.permission === 'granted') {
+navigator.serviceWorker.getRegistration().then(reg => {
+reg.showNotification('Hello');
+</script>
