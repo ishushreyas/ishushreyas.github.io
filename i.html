@@ -18,12 +18,48 @@ console.log('Notification permission: ' , status);
   displayNotification();
 }
 function displayNotification() {
-  const options = {
-    body: 'jhsdkiuhdh',
-    vibrate: [100],
-    data: { primaryKey: 1 }
-    }
-if(Notification.permission === 'granted') {
+  navigator.serviceWorker.ready.then(
+
+  (serviceWorkerRegistration) => {
+
+    const options = {
+
+      userVisibleOnly: true,
+
+      applicationServerKey,
+
+    };
+
+    serviceWorkerRegistration.pushManager.subscribe(options).then(
+
+      (pushSubscription) => {
+
+        console.log(pushSubscription.endpoint);
+
+        // The push subscription details needed by the application
+
+        // server are now available, and can be sent to it using,
+
+        // for example, an XMLHttpRequest.
+
+      }, (error) => {
+
+        // During development it often helps to log errors to the
+
+        // console. In a production environment it might make sense to
+
+        // also report information about errors back to the
+
+        // application server.
+
+        console.error(error);
+
+      }
+
+    );
+
+  });
+/*if(Notification.permission === 'granted') {
 navigator.serviceWorker.getRegistration().then(reg => {
 reg.pushManager.subscribe({
   userVisibleOnly: true
@@ -32,6 +68,6 @@ reg.pushManager.subscribe({
               });
 });
   }
-  }
+  }*/
   document.getElementById('requestPermission').addEventListener('click', requestPermission);
 </script>
