@@ -9,13 +9,14 @@ if(!('serviceWorker' in navigator)){
   }
 navigator.serviceWorker.register('/service-worker.js')
 .then(function (registration) {
-  console.log('Resistered successfully. Scope is: ' , registration.acope);
+  alert('Resistered successfully. Scope is: ' + registration.acope);
   });
-}
+
 Notification.requestPermission(status => {
 console.log('Notification permission: ' , status);
 });
-
+  displayNotification();
+}
 function displayNotification() {
   const options = {
     body: 'jhsdkiuhdh',
@@ -28,5 +29,5 @@ reg.showNotification('Hello', options);
   });
   }
   }
-  displayNotification();
+  requestPermission();
 </script>
