@@ -17,9 +17,14 @@ console.log('Notification permission: ' , status);
 });
 
 function displayNotification() {
+  const options = {
+    body: 'jhsdkiuhdh',
+    vibrate: [100],
+    data: { primaryKey: 1 }
+    }
 if(Notification.permission === 'granted') {
 navigator.serviceWorker.getRegistration().then(reg => {
-reg.showNotification('Hello');
+reg.showNotification('Hello', options);
   });
   }
   }
