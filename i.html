@@ -1,5 +1,5 @@
 <body>
-
+<button onclick ='requestPermission()'>requestPermission</button>
 </body>
 <script>
 function requestPermission(){
@@ -25,9 +25,13 @@ function displayNotification() {
     }
 if(Notification.permission === 'granted') {
 navigator.serviceWorker.getRegistration().then(reg => {
-reg.showNotification('Hello', options);
-  });
+reg.pushManager.subscribe({
+  userVisibleOnly: true
+  }).then(sub => {
+  console.log(sub.toJSON();
+              });
+});
   }
   }
-  requestPermission();
+  
 </script>
