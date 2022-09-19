@@ -1,5 +1,5 @@
 <body>
-<button onclick ='requestPermission()'>requestPermission</button>
+<button id='requestPermission'>requestPermission</button>
 </body>
 <script>
 function requestPermission(){
@@ -33,5 +33,5 @@ reg.pushManager.subscribe({
 });
   }
   }
-  
+  document.getElementById('requestPermission').addEventListener('click', requestPermission);
 </script>
