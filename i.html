@@ -24,6 +24,9 @@ function displayNotification() {
                     userVisibleOnly: true,
                     applicationServerKey
                 };
+              if(Notification.permission === 'granted') {
+
+navigator.serviceWorker.getRegistration().then(serviceWorkerRegistration => {
                 serviceWorkerRegistration.pushManager.subscribe(options).then(
                  (pushSubscription) => {
                 console.log(pushSubscription.endpoint);
@@ -37,7 +40,7 @@ function displayNotification() {
                // application server.
              console.error(error);
              });*/
-            });
+           }); });
 /*if(Notification.permission === 'granted') {
 navigator.serviceWorker.getRegistration().then(reg => {
 reg.pushManager.subscribe({
