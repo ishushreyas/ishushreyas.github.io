@@ -1,20 +1,32 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
-import { getMessaging } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-messaging-sw.js';
+importScripts('https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/9.2.0/firebase-messaging.js');
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAN-X9u7n7QnM8RLrVV4YnXq2MmVz6WNfw",
+// Initialize the Firebase app in the service worker by passing in
+// your app's Firebase config object.
+// https://firebase.google.com/docs/web/setup#config-object
+firebase.initializeApp({
+  apiKey: "AIzaSyBVrRabMjHB6JSWoIxpgDp6Wnn1_eryP6g",
+  authDomain: "chat-9a308.firebaseapp.com",
+  projectId: "chat-9a308",
+  storageBucket: "chat-9a308.appspot.com",
+  messagingSenderId: "425014899154",
+  appId: "1:425014899154:web:be7fb6b68d239647e2180b",
+  measurementId: "G-334Y4TXNJD"
+});
 
-    authDomain: "em-issyoo.firebaseapp.com",
+// Retrieve an instance of Firebase Messaging so that it can handle background
+// messages.
+const messaging = firebase.messaging();
 
-    projectId: "em-issyoo",
+messaging.onBackgroundMessage((payload) => {
+  console.log('[firebase-messaging-sw.js] Received background message ', payload);
+  // Customize notification here
+  const notificationTitle = 'Background Message Title';
+  const notificationOptions = {
+    body: 'Background Message body.',
+    icon: '/firebase-logo.png'
+  };
 
-    storageBucket: "em-issyoo.appspot.com",
-
-    messagingSenderId: "33480809995",
-
-    appId: "1:33480809995:web:74df1e056f7638d0b5310e",
-
-    measurementId: "G-C64NWHRT0Y"
-  }
-const firebaseApp = initializeApp(firebaseConfig);
-getMessaging(firebaseApp);
+  self.registration.showNotification(notificationTitle,
+    notificationOptions);
+});
