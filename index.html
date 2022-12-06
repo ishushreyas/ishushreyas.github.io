@@ -10,5 +10,28 @@ margin: 2px;
 <div></div>
 </body>
 <script>
+var x ='';
+var y ='';
+var dval;
 const divs = document.getElementsByTagName('div');
+for( const div of divs){
+div.ontouchstart = e => {ts(e);}
+div.ontouchmove = e => {tm(e);}
+}
+function ts(e){
+   dval ="";
+   
+    x = e.touches[0].clientX;
+    y = e.touches[0].clientY;
+    dval+=" M"+x+" "+y+"L";
+    
+   }
+   
+   function tm(e){
+    mx = e.touches[0].clientX;
+    my = e.touches[0].clientY;
+    dval+=mx+" "+my+" ";
+    this.style.transform = 'translate('+mx.toString()+'px,'+my.toString()+'px)';
+    e.preventDefault();
+   }
 </script>
