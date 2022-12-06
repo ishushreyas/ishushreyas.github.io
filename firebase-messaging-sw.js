@@ -1,5 +1,5 @@
-importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js");
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+import { getMessaging , onBackgroundMessage} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-messaging-sw.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyBVrRabMjHB6JSWoIxpgDp6Wnn1_eryP6g",
@@ -11,8 +11,7 @@ apiKey: "AIzaSyBVrRabMjHB6JSWoIxpgDp6Wnn1_eryP6g",
   measurementId: "G-334Y4TXNJD"
 };
 
-firebase.initializeApp(firebaseConfig);
-const messaging = firebase.messaging();
+const messaging = getMessaging(firebaseApp);
 
 messaging.onBackgroundMessage((payload) => {
   console.log( "[firebase-messaging-sw.js] Received background message ",  payload );
