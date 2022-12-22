@@ -63,7 +63,7 @@
   document.getElementById('gAuth').addEventListener('click', gAuth);
 
   async function eAuth(){
-  signInWithEmailAndPassword(auth, prompt('Your email'), prompt('Your Password');)
+  signInWithEmailAndPassword(auth, prompt('Your email'), prompt('Your Password'))
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
