@@ -9,11 +9,19 @@
   *{
    font-family: 'Nunito';
    }
+  button {
+   background-color: #000;
+   border: none;
+   border-radius: 22px;
+   color: #fff;
+   padding: 13px;
+  }
   </style>
 </head>
 <body>
 <button id='eAuth'>Continue with Email</button>
 <button id='gAuth'>Continue with Google</button>
+<button id='nAuth'>Register</button>
 </body>
 
 <script type="module">
@@ -92,7 +100,7 @@
     // ..
   });
   }
-
+  document.getElementById('nAuth').addEventListener('click', nAuth);
   async function resetAuth(email){
   sendPasswordResetEmail(auth, email)
   .then(() => {
