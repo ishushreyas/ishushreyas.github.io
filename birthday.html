@@ -1,1 +1,38 @@
-Js
+<body>
+<button id='addDoc'>Add</button>
+</body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+  import { getFirestore , collection, addDoc} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+  
+    const firebaseConfig = {
+    apiKey: "AIzaSyDj27G0_lanRg5sNG5ijrK0rGG96ZyfyXw",
+    authDomain: "birthday-16.firebaseapp.com",
+    projectId: "birthday-16",
+    storageBucket: "birthday-16.appspot.com",
+    messagingSenderId: "391242398772",
+    appId: "1:391242398772:web:c50043072ff8a78d6e9e61",
+    measurementId: "G-03TXT9WK8B"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  async function addDoc(){
+  try {
+  const docRef = await addDoc(collection(db, "users"), {
+    first: "Ada",
+    last: "Lovelace",
+    born: 1815
+  });
+  console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+  console.error("Error adding document: ", e);
+  }
+  }
+</script>
