@@ -21,7 +21,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
   import { getFirestore , collection, addDoc} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
-  import { getAuth, signInWithPopup, GoogleAuthProvider , signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider , signInWithEmailAndPassword, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
   
     const firebaseConfig = {
     apiKey: "AIzaSyDj27G0_lanRg5sNG5ijrK0rGG96ZyfyXw",
@@ -77,6 +77,35 @@
   }
   document.getElementById('eAuth').addEventListener('click', eAuth);
 
+  async function nAuth(){
+  var email = prompt('Your email');
+  createUserWithEmailAndPassword(auth, email, Math.random().toString())
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+    resetAuth(email);
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+  }
+
+  async function resetAuth(email){
+  sendPasswordResetEmail(auth, email)
+  .then(() => {
+    // Password reset email sent!
+    // ..
+    alert('link sent to your email');
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+  }
   async function addBd(){
   try {
   const docRef = await addDoc(collection(db, "users"), {
