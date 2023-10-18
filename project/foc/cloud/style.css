@@ -13,8 +13,10 @@ body {
   padding: 5vw;
   background-color: black;
 }
-.img_inv{
+img{
   height: 150px;
+}
+.img_inv{
   filter: invert(100%);
 }
 h1 {
