@@ -16,6 +16,12 @@ body {
   padding: 5vw;
   background-color: black;
 }
+.screen_box_normal{
+  height: 300px;
+  width: 90vw;
+  padding: 5vw;
+  background-color: white;
+}
 img{
   max-height: 150px;
   max-width: 300px;
