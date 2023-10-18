@@ -9,6 +9,10 @@
   
 </head>
 <body>
+ <div id="foot" style="display:none; position:fixed;top:0;left:0;right:0;">
+ <span class='material-symbols-outlined'>cloud</span>
+Cloud
+ </div>
  <div class="screen_box">
  <h1>Cloud</h1>
   <img class="img_inv" id="img0" src="https://ishushreyas.github.io/assets/images/0.png">
@@ -34,6 +38,17 @@
 <p>Cloud computing refers to the delevery of on-demand computing services over the internet as a pay-as-you-go basis. OR,</p>
 <p>Rather than managing files and services on a local storage device you'll be doing the same over the internet.</p>
  </div>
+ <script>
+function changeCss () {
+  var navElement = document.querySelector("#foot");
+  this.scrollY > 100 ? navElement.style.display = 'none' : navElement.style.display = 'block';
+}
+
+localStorage.setItem('User', true);
+
+window.addEventListener("scroll", changeCss , false);
+
+  </script>
  <script src="script.js"></script>
 </body>
 </html>
