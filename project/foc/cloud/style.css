@@ -1,0 +1,40 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@600&display=swap');
+*{
+font-family: 'Poppins';
+}
+body {
+ margin: 0px;
+ padding: 0px;
+}
+.screen_box{
+  height: 300px;
+  width: 90vw;
+  padding: 5vw;
+  background-color: black;
+}
+.img_inv{
+  height: 150px;
+  filter: invert(100%);
+}
+h1 {
+ margin: 0px;
+ color: white;
+}
+.screen_box_white{
+  height: 300px;
+  width: 90vw;
+  padding: 5vw;
+  mix-blend-mode: difference;
+  background: linear-gradient(-20deg, #fff 63%,#000 10%);
+}
+#img0{
+  float: right;
+}
+a{
+color: pink;
+      padding:7px;
+      border-radius:21px;
+      text-align: center;
+      mix-blend-mode: difference;
+}
