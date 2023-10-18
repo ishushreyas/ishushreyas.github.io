@@ -17,7 +17,8 @@ body {
   background-color: black;
 }
 img{
-  height: 150px;
+  max-height: 150px;
+  max-width: 300px;
 }
 .img_inv{
   filter: invert(100%);
