@@ -12,14 +12,14 @@ body {
 }
 .screen_box{
   height: 300px;
-  width: 90vw;
-  padding: 4vw;
+  width: 100vw;
+  padding: 0vw;
   background-color: black;
 }
 .screen_box_normal{
   height: 300px;
-  width: 90vw;
-  padding: 3vw;
+  width: 100vw;
+  padding: 0vw;
   background-color: white;
 }
 img{
@@ -36,8 +36,8 @@ h1 {
 }
 .screen_box_white{
   height: 300px;
-  width: 90vw;
-  padding: 3vw;
+  width: 100vw;
+  padding: 0vw;
   mix-blend-mode: difference;
   background: linear-gradient(-20deg, #fff 63%,#000 10%);
 }
