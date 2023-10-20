@@ -14,11 +14,11 @@ div::-webkit-scrollbar {
 display:none;
 }
 button {
- border: none;
+  border: none;
   background-color: #000;
-  border-radius: 30px;
+  border-radius: 50px;
   color: #fff;
-  padding:12px;
+  padding: 18px 45px 18px 45px;
 }
 .screen_box{
   width: 100vw;
