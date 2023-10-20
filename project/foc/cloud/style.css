@@ -16,7 +16,7 @@ display:none;
 button {
  border: none;
   background-color: #000;
-  border-radius: 50%;
+  border-radius: 30px;
   color: #fff;
   padding:12px;
 }
