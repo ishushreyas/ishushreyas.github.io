@@ -12,7 +12,7 @@ function changeCss () {
   
     document.getElementById("aws_card").addEventListener("mouseover", function(){
       document.getElementById("AWS").style.opacity = "1";
-      document.getElementById("AWS").style.display = "block";
+      document.getElementById("AWS").style.display = "flex";
     });
     document.getElementById("aws_card").addEventListener("mouseout", function(){
       document.getElementById("AWS").style.opacity = "0";
