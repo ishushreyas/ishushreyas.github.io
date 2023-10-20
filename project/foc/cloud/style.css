@@ -13,6 +13,13 @@ body {
 div::-webkit-scrollbar {
 display:none;
 }
+button {
+ border: none;
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+  padding:12px;
+}
 .screen_box{
   width: 100vw;
   padding: 0vw;
