@@ -48,6 +48,12 @@ h1,p{
   padding: 12px;
   margin:0;
 }
+ul{
+ margin: 12px;
+  padding:12px;
+  background-color: #CCD9D7;
+  border: solid 0.5px #F0F2F2;
+}
 li{
 font-family: 'Tilt Neon';
 }
@@ -76,6 +82,9 @@ font-family: 'Tilt Neon';
     padding :5vw;
     background: rgb(0,0,0,0.9);
      color:white;
+}
+#box2 h1{
+ color: #53A6A6;
 }
 #box3{
  background-color: #9FBCBA;
