@@ -55,8 +55,10 @@ h1,p{
 }
 .footer{
   display: flex;
-  align-item: center;
+  align-items: center;
   justify-content: center;
+}
+.img_div{
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
