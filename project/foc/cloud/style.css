@@ -73,6 +73,9 @@ h1,p{
     background: rgb(0,0,0,0.9);
      color:white;
 }
+#box3{
+ background-color: #9FBCBA;
+}
 #img0{
   position: absolute;
   bottom: 12px;
