@@ -73,6 +73,11 @@ h1,p{
 #img5{
   float: left;
 }
+#img6{
+  position: absolute;
+  bottom:0;
+  right:0;
+}
 a{
 color: pink;
       padding:7px;
