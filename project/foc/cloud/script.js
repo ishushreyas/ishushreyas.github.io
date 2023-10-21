@@ -3,7 +3,7 @@ function changeCss () {
     var scrllText = document.querySelector("#scroll");
     var img3 = document.querySelector("#img3");
     var img5 = document.querySelector("#img5");
-    scrllText.textContent = this.scrollY;
+    //scrllText.textContent = this.scrollY;
     this.scrollY > 800 && this.scrollY < 2250 ? navElement.style.display = 'block' : navElement.style.display = 'none';
     this.scrollY > 700 && this.scrollY < 1200 ? img3.style.transform = 'translate(0px)' : img3.style.transform = 'translate(' + (this.scrollY - 600) +'px)';
     this.scrollY > 900 && this.scrollY < 1600 ? img5.style.transform = 'translate(0px)' : img5.style.transform = 'translate(-' + (this.scrollY - 600) +'px)';
