@@ -57,6 +57,9 @@ h1,p{
   display: flex;
   align-item: center;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 #foot{
   display:none;
