@@ -47,13 +47,15 @@ h1 {
 h1,p{
   padding: 12px;
   margin:0;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 ul{
   margin: 12px;
   padding:12px;
   background-color: #CCD9D7;
   border: solid 0.5px #F0F2F2;
-  border-radius: 40px;
+  border-radius: 20px;
 }
 li{
   font-family: 'Tilt Neon';
@@ -114,7 +116,6 @@ p{
   text-align: justify;
   font-family: century-gothic, sans-serif;
   font-style: normal;
-  margin-left: 12px;
 }
 #img3{
   transform: translate(50px);
