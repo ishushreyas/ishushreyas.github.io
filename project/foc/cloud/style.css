@@ -53,6 +53,11 @@ h1,p{
   mix-blend-mode: difference;
   background: linear-gradient(-20deg, #fff 63%,#000 10%);
 }
+.footer{
+  display: flex;
+  align-item: center;
+  justify-content: center;
+}
 #foot{
   display:none;
    position:fixed;
