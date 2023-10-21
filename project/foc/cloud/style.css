@@ -1,4 +1,4 @@
-
+@import url("https://use.typekit.net/oov2wcw.css");
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Poppins:wght@600&display=swap');
 *{
 font-family: 'Poppins';
@@ -98,7 +98,8 @@ color: pink;
 }
 p{
   text-align: justify;
-  font-family: 'Roboto';
+  font-family: century-gothic, sans-serif;
+  font-style: normal;
 }
 #img3{
   transform: translate(50px);
