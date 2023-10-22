@@ -50,9 +50,10 @@ h1,p{
   margin-left: 12px;
   margin-right: 12px;
 }
-ul{
+#box3 ul{
   margin: 12px;
   padding:12px;
+  width: auto;
   background-color: #CCD9D7;
   border: solid 0.5px #F0F2F2;
   border-radius: 20px;
@@ -85,8 +86,8 @@ li{
    width:90vw;
    height: auto;
     padding :5vw;
-    background: rgb(0,0,0,0.7);
-    backdrop-filter: blur(12px);
+    background: rgb(220,220,220,0.6);
+    backdrop-filter: blur(22px);
      color:white;
 }
 #box2 h1{
