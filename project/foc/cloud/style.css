@@ -181,10 +181,6 @@ iframe{
  #foot h1{
   visibility: hidden;
 }
-#foot{
-  height: 100px;
-  overflow: hidden;
-}
 iframe{
   height: 500px;
 }
