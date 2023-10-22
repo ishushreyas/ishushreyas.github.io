@@ -172,4 +172,7 @@ p{
 .info-popup{
   flex-direction: row;
 }
+ #foot h1{
+  visibility: hidden;
+}
 }
