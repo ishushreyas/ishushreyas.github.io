@@ -91,7 +91,7 @@ li{
   width: 100vw;
   padding: 0vw;
   mix-blend-mode: difference;
-  background: linear-gradient(-20deg, #fff 63%,#000 10%);
+  background: linear-gradient(-20deg, #000 63%,#fff 10%);
 }
 .footer{
   display: flex;
