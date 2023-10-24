@@ -5,8 +5,8 @@ function changeCss () {
     var img5 = document.querySelector("#img5");
     //scrllText.textContent = this.scrollY;
     this.scrollY > 800 && this.scrollY < 2250 ? navElement.style.display = 'block' : navElement.style.display = 'none';
-    this.scrollY > img3.getBoundingClientRect().top && this.scrollY < 1200 ? img3.style.transform = 'translate(0px)' : img3.style.transform = 'translate(' + (this.scrollY - 600) +'px)';
-    this.scrollY > 900 && this.scrollY < 1600 ? img5.style.transform = 'translate(0px)' : img5.style.transform = 'translate(-' + (this.scrollY - 600) +'px)';
+    this.scrollY > img3.getBoundingClientRect().top ? img3.style.transform = 'translate(0px)' : img3.style.transform = 'translate(' + (this.scrollY - img3.getBoundingClientRect().top) +'px)';
+    this.scrollY > img5.getBoundingClientRect().top ? img5.style.transform = 'translate(0px)' : img5.style.transform = 'translate(-' + (this.scrollY - img5.getBoundingClientRect().top ) +'px)';
   }
   window.addEventListener("scroll", changeCss , false);
   
