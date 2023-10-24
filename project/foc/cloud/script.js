@@ -6,7 +6,9 @@ function changeCss () {
     //scrllText.textContent = this.scrollY;
     this.scrollY > 800 && this.scrollY < 2250 ? navElement.style.display = 'block' : navElement.style.display = 'none';
     this.scrollY > img3.getBoundingClientRect().top ? img3.style.transform = 'translate(0px)' : img3.style.transform = 'translate(' + (this.scrollY - img3.getBoundingClientRect().top) +'px)';
+this.scrollY > img3.getBoundingClientRect().top ? img3.style.opacity = '1' : img3.style.opacity = '0';
     this.scrollY > img5.getBoundingClientRect().top ? img5.style.transform = 'translate(0px)' : img5.style.transform = 'translate(-' + (this.scrollY - img5.getBoundingClientRect().top ) +'px)';
+this.scrollY > img5.getBoundingClientRect().top ? img5.style.opacity = '1' : img5.style.opacity = '0';
   }
   window.addEventListener("scroll", changeCss , false);
   
