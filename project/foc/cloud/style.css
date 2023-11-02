@@ -192,9 +192,9 @@ p{
 .info_popup img{
   border-radius: 50px;
 }
-iframe{
-  height: 500px;
-  width: 100%;
+iframe, mod-vh{
+  height: 300px;
+  width: 90%;
 }
 
 @media screen and (min-width: 500px){
@@ -205,8 +205,8 @@ iframe{
  #foot h1{
   visibility: hidden;
 }
-iframe{
+iframe, mod-vh{
   height: 500px;
-  width: 100%;
+  width: 90%;
 }
 }
