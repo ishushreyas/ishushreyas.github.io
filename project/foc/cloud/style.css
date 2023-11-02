@@ -65,8 +65,8 @@ img{
 }
 h1 {
  margin: 0px;
- color: white;
-  text-shadow: 2px 2px 2px rgb(0,0,0,0.2);
+ color: #ffa28b;
+ text-shadow: 2px 2px 2px rgb(0,0,0,0.2);
 }
 h1,p{
   padding: 12px;
@@ -114,9 +114,6 @@ li{
     backdrop-filter: blur(22px);
      color:white;
 }
-#box2 h1{
- color: #53A6A6;
-}
 #box3{
  background-color: #9FBCBA;
 }
@@ -133,7 +130,9 @@ li{
   bottom:0;
 }
 a{
-      color: #ffa28b;
+      background: linear-gradient(45deg, #ff00cc, #3333cc);
+      -webkit-background-clip: text;
+      color: transparent;
       padding:7px;
       border-radius:21px;
       text-align: center;
