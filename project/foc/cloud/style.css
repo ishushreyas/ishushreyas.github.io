@@ -69,9 +69,8 @@ h1 {
  text-shadow: 2px 2px 2px rgb(0,0,0,0.2);
 }
 h3 {
- margin: 0px;
  color: #7ee787;
- text-shadow: 2px 2px 2px rgb(0,0,0,0.2);
+ text-shadow: 1px 1px 1px rgb(0,0,0,0.2);
 }
 h1,p{
   padding: 12px;
