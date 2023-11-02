@@ -39,7 +39,7 @@ display:none;
 }
 button {
   border: none;
-  background-color: #000;
+  background: linear-gradient(45deg, #ff00cc, #3333cc);
   border-radius: 50px;
   color: #fff;
   padding: 12px 35px 12px 35px;
