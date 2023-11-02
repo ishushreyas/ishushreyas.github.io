@@ -192,6 +192,10 @@ p{
 .info_popup img{
   border-radius: 50px;
 }
+iframe{
+  height: 500px;
+  width: 100%;
+}
 
 @media screen and (min-width: 500px){
 
@@ -203,5 +207,6 @@ p{
 }
 iframe{
   height: 500px;
+  width: 100%;
 }
 }
