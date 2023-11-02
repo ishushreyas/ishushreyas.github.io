@@ -27,7 +27,7 @@ body {
     }
 
     a {
-      color: #007BFF;
+      color: #ffa28b;
       text-decoration: none;
     }
 
@@ -133,7 +133,7 @@ li{
   bottom:0;
 }
 a{
-color: pink;
+      color: #ffa28b;
       padding:7px;
       border-radius:21px;
       text-align: center;
