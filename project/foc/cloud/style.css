@@ -201,7 +201,7 @@ p{
   border-radius: 50px;
 }
 iframe, mod-vh{
-  height: 300px !important;
+  height: 160px !important;
 }
 
 @media screen and (min-width: 500px){
