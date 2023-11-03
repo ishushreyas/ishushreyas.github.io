@@ -3,7 +3,7 @@ function changeCss () {
     var scrllText = document.querySelector("#scroll");
     var img3 = document.querySelector("#img3");
     var img5 = document.querySelector("#img5");
-var secElement = document.querySelector("#box2");
+var secElement = document.querySelector("#box4");
 var lstElement = document.querySelector("#box5");
     //scrllText.textContent = this.scrollY;
     this.scrollY > 800 && this.scrollY < 2250 ? navElement.style.display = 'block' : navElement.style.display = 'none';
