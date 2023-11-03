@@ -9,6 +9,8 @@ function changeCss () {
 this.scrollY > img3.getBoundingClientRect().top ? img3.style.opacity = '1' : img3.style.opacity = '0';
     this.scrollY > img5.getBoundingClientRect().top ? img5.style.transform = 'translate(0px)' : img5.style.transform = 'translate(' + (this.scrollY - img5.getBoundingClientRect().top + 100 ) +'px)';
 this.scrollY > img5.getBoundingClientRect().top ? img5.style.opacity = '1' : img5.style.opacity = '0';
+this.scrollY > img3.getBoundingClientRect().top ? document.body.style.backgroundColor = '#7ee787' : ;
+this.scrollY > img5.getBoundingClientRect().top ? document.body.style.backgroundColor = '#939aff' : ;
   }
   window.addEventListener("scroll", changeCss , false);
   
