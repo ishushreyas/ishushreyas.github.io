@@ -4,7 +4,7 @@ function changeCss () {
     var img3 = document.querySelector("#img3");
     var img5 = document.querySelector("#img5");
 var secElement = document.querySelector("#box4");
-var lstElement = document.querySelector("#box5");
+var lstElement = document.querySelector("#iframe2");
     //scrllText.textContent = this.scrollY;
     this.scrollY > 800 && this.scrollY < 2250 ? navElement.style.display = 'block' : navElement.style.display = 'none';
     this.scrollY > img3.getBoundingClientRect().top ? img3.style.transform = 'translate(0px)' : img3.style.transform = 'translate(' + (this.scrollY - img3.getBoundingClientRect().top) +'px)';
