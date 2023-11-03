@@ -14,6 +14,8 @@ this.scrollY > img5.getBoundingClientRect().top ? img5.style.opacity = '1' : img
 this.scrollY > secElement.getBoundingClientRect().top ? document.body.style.backgroundColor = '#7ee787' : console.log("Not in 3");
 this.scrollY > lstElement.getBoundingClientRect().top ? document.body.style.backgroundColor = '#939aff' : console.log("Not in 5");
   }
+document.querySelector("#img6").getBoundingClientRect().top ? document.body.style.backgroundColor = '#ffffff' : console.log("Not in up");
+  }
   window.addEventListener("scroll", changeCss , false);
   
     document.getElementById("aws_card").addEventListener("mouseover", function(){
