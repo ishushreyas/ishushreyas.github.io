@@ -68,6 +68,10 @@ h1 {
  color: #ffa28b;
  text-shadow: 2px 2px 2px rgb(0,0,0,0.2);
 }
+h2 {
+ color: #939aff;
+ text-shadow: 1px 1px 1px rgb(0,0,0,0.2);
+}
 h3 {
  color: #7ee787;
  text-shadow: 1px 1px 1px rgb(0,0,0,0.2);
