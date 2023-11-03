@@ -52,8 +52,8 @@ button {
 .screen_box_normal{
   width: 100vw;
   padding: 0vw;
-  background-color: rgb(244, 244, 244, 0.4);
-  backdrop-filter: blur(24px);
+  background-color: rgb(244, 244, 244, 0.5);
+  backdrop-filter: blur(66px);
   padding-bottom: 20px;
 }
 img{
