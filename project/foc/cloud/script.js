@@ -3,14 +3,16 @@ function changeCss () {
     var scrllText = document.querySelector("#scroll");
     var img3 = document.querySelector("#img3");
     var img5 = document.querySelector("#img5");
+var secElement = document.querySelector("#box2");
+var lstElement = document.querySelector("#box5");
     //scrllText.textContent = this.scrollY;
     this.scrollY > 800 && this.scrollY < 2250 ? navElement.style.display = 'block' : navElement.style.display = 'none';
     this.scrollY > img3.getBoundingClientRect().top ? img3.style.transform = 'translate(0px)' : img3.style.transform = 'translate(' + (this.scrollY - img3.getBoundingClientRect().top) +'px)';
 this.scrollY > img3.getBoundingClientRect().top ? img3.style.opacity = '1' : img3.style.opacity = '0';
     this.scrollY > img5.getBoundingClientRect().top ? img5.style.transform = 'translate(0px)' : img5.style.transform = 'translate(' + (this.scrollY - img5.getBoundingClientRect().top + 100 ) +'px)';
 this.scrollY > img5.getBoundingClientRect().top ? img5.style.opacity = '1' : img5.style.opacity = '0';
-this.scrollY > img3.getBoundingClientRect().top ? document.body.style.backgroundColor = '#7ee787' : ;
-this.scrollY > img5.getBoundingClientRect().top ? document.body.style.backgroundColor = '#939aff' : ;
+this.scrollY > secElement.getBoundingClientRect().top ? document.body.style.backgroundColor = '#7ee787' : console.log("Not in 3");
+this.scrollY > lstElement.getBoundingClientRect().top ? document.body.style.backgroundColor = '#939aff' : console.log("Not in 5");
   }
   window.addEventListener("scroll", changeCss , false);
   
