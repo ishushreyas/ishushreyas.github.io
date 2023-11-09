@@ -193,7 +193,7 @@ p{
   overflow: scroll;
   text-shadow: 1px 1px 1px rgb(0,0,0,0.2);
   opacity: 0;
-  z-index: 2;
+  z-index: 7;
   position: fixed;
   display: none;
   flex-direction: column;
