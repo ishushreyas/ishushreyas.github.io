@@ -207,9 +207,14 @@ p{
   right: 20px;
   border-radius: 50px;
   transition: all ease .3s;
-  background-color: rgba(77, 75, 75, 0.2);
-  backdrop-filter: blur(25px);
   box-shadow: 5px 5px 5px rgb(0,0,0,0.2);
+}
+@supports (-webkit-backdrop-filter: saturate(180%) blur(20px)) or (backdrop-filter: saturate(180%) blur(20px)) {
+    .info_popup {
+        background:rgba(22,22,23,0.8);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px)
+    }
 }
 .info_popup img{
   border-radius: 50px;
