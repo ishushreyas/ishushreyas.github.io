@@ -211,7 +211,7 @@ p{
 }
 @supports (-webkit-backdrop-filter: saturate(180%) blur(20px)) or (backdrop-filter: saturate(180%) blur(20px)) {
     .info_popup {
-        background:rgba(250,250,250,0.8);
+        background:rgba(200,200,200,0.8);
         -webkit-backdrop-filter: saturate(180%) blur(20px);
         backdrop-filter: saturate(180%) blur(20px)
     }
