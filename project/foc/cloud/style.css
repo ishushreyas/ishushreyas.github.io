@@ -124,10 +124,16 @@ li{
    left:0;
    width:90vw;
    height: auto;
-    padding :5vw;
-    background: rgb(0,0,0);
-    backdrop-filter: blur(22px);
+   padding :5vw;
      color:white;
+}
+
+@supports (-webkit-backdrop-filter: saturate(180%) blur(20px)) or (backdrop-filter: saturate(180%) blur(20px)) {
+    #foot {
+        background:rgba(22,22,23,0.8);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px)
+    }
 }
 #box3{
  background-color: #9FBCBA;
