@@ -2,10 +2,8 @@ self.addEventListener("install", function (event) {
   console.log('Service worker install event!');
   const cacheName = 'static-shell-v1';
   const resourcesToPrecache = [
-   
     'index.html',
-    'chat.html',
-    'proposal.html'
+    'project/foc/cloud/index.html',
     ];
   event.waitUntil(
     caches.open(cacheName) 
