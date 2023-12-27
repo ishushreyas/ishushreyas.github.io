@@ -17,15 +17,23 @@ body {
   margin: 0;
   padding: 0;
 }
+.d-c{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.d-r{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 .container{
   border-radius: 12px;
   margin: 12px;
   padding: 12px;
   width: calc(100% - 48px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
 }
 .profile_pic{
@@ -42,8 +50,9 @@ body {
 }
 </style>
 <body class="background">
-  <div class="container inverse-on-surface">
+  <div class="container d-c inverse-on-surface">
     <img class="profile_pic" src="/ishushreyas.jpg">
     <h2 class="poppins on-surface-text m-1">Ishu Shreyas </h2>
+    <p class="d-r"><span class="material-symbols-outlined">location_on</span></p>
   </div>
 </body>
