@@ -75,15 +75,38 @@ p{
 .ff-qs{
   font-family: 'Quicksand';
 }
+
+@media only screen and (min-width: 600px) {
+
+.port{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.left{
+  
+}
+.right{
+  border-left: solid #434343 1px;
+  width: 50vw;
+  height: calc(100vh - 90px);
+  overflow: scroll;
+}
+}
 </style>
 <body class="background">
   <!--div class="p-1 d-r bg-0"><span class="material-symbols-outlined">menu</span></div-->
+  <div class="port">
+    <div class="left">
   <div class="container m-1 p-1 d-c inverse-on-surface on-surface-text">
     <img class="profile_pic" src="/ishushreyas.jpg">
     <h2 class="poppins m-1 m-b-0">Ishu Shreyas </h2>
     <p class="d-r m-1 fs-17 m-t-0 m-b-0"><span class="material-symbols-outlined">location_on</span>Adityapur, Jamshedpur, Jharkhand</p>
     <p class="d-r m-1 fs-17 m-t-0"><span class="material-symbols-outlined">email</span>ishushreyas@gmail.com</p>
   </div>
+    </div>
+    <div class="right">
   <div class="container m-1 p-1 inverse-on-surface on-surface-text">
     <h3 class="poppins m-1">Skills</h3>
     <p class="m-1 p-1 m-t-0"></p>
@@ -106,6 +129,8 @@ p{
     <h3 class="poppins m-1">Education</h3>
     <p class="m-1 m-t-0">St. Michael Anglo Indian School</p>
     <p class="m-1 m-t-0">Government Polytechnic Adityapur</p>
+  </div>
+    </div>
   </div>
   <div class="p-1 bg-0 d-r" style="height: 90px;">
     <a href="https://chatwithshreyas.web.app" class="material-symbols-outlined gt-1">feedback</a>
