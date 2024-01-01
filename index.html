@@ -32,6 +32,13 @@ p{
   justify-content: center;
   align-items: center;
 }
+@supports (-webkit-backdrop-filter: saturate(180%) blur(20px)) or (backdrop-filter: saturate(180%) blur(20px)) {
+    .container {
+        background:rgba(252,252,253,0.8);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px)
+    }
+}
 .container{
   border-radius: 12px;
   width: calc(100% - 48px);
@@ -111,6 +118,13 @@ body{
 }
 .bs-0{
   box-shadow: 0px 0px 90px rgb(255,255,255,0.1);
+}
+@supports (-webkit-backdrop-filter: saturate(180%) blur(20px)) or (backdrop-filter: saturate(180%) blur(20px)) {
+    .container {
+        background:rgba(22,22,23,0.8);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px)
+    }
 }
 }
 </style>
